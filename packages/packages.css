@@ -1,0 +1,145 @@
+@font-face {
+    font-family: "AnonymousPro";
+    src: url("anonymousPro-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "AnonymousPro";
+    src: url("anonymousPro-Bold.ttf");
+    font-weight: 700;
+}
+
+main {
+    padding-top: 2rem;
+}
+
+.background {
+    background: url("../images/plans-background.jpg") center/cover;
+    filter: grayscale(40%);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+}
+
+.package {
+    width: 80%;
+    margin: 1rem 0;
+    border: 4px solid #debcb2;
+    border-left: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.package:hover,
+.package:active {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-color: #bb877a;
+    /* border-color: #ff5454 !important; */
+    animation: push-up 1s ease-out forwards;
+}
+
+.package a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 2rem;
+}
+
+.package__badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    font-size: 0.8rem;
+    color: white;
+    background: #bb877a;
+    padding: 0.5rem;
+    transform: rotate(45deg) translate(3.5rem, -1rem);
+    transform-origin: center;
+    width: 12rem;
+    text-align: center;
+}
+
+.package__subtitle {
+    color: #bb877a;
+}
+
+.package__info {
+    padding: 1rem;
+    border: 1px solid #debcb2;
+    color: #bb877a;
+    background: white;
+    font-size: 1.2rem;
+    /* font-style font-variant font-weight font-size/line-height font-family*/
+}
+
+.clearfix {
+    clear: both;
+}
+
+#plus {
+    background: #f3e2d6;
+}
+
+#free {
+    background: #f3e2d6;
+    float: right;
+    border-right: none;
+    border-left: 4px solid #debcb2;
+    text-align: right;
+}
+
+#free:hover,
+#free:active {
+    border-left-color: #bb877a;
+}
+
+#premium {
+    background: #f5ebe7;
+}
+
+#premium .package__title {
+    color: black;
+}
+
+#premium .package__subtitle {
+    color: #bb877a;
+}
+
+@media (min-width: 40rem) {
+    main {
+        max-width: 1500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 1500px) {
+    .package {
+        border-left: 4px solid #debcb2;
+    }
+
+    #free {
+        border-right: 4px solid #debcb2;
+    }
+
+    #free:hover,
+    #free:active {
+        border-right-color: #bb877a;
+    }
+}
+
+@keyframes push-up {
+    0% {
+        transform: translateY(0);
+    }
+
+    33% {
+        transform: translateY(-1.5rem);
+    }
+
+    100% {
+        transform: translateY(-1rem);
+    }
+}
